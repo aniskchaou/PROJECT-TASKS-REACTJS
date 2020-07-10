@@ -5,8 +5,12 @@ import NavBar from './components/NavBar';
 import ProjectTasks from './components/ProjectTasks';
 import { BrowserRouter as Router, Route } from "react-router-dom"
 import AddProjectTask from './components/AddProjectTask';
+import { Provider } from "react-redux";
+import store from "./redux/store";
+
 function App() {
   return (
+    <Provider store={store}>
     <Router>
       <div className="App">
         <NavBar />
@@ -14,6 +18,7 @@ function App() {
         <Route exact path="/addtask" component={AddProjectTask} />
       </div>
     </Router>
+    </Provider>
   );
 }
 
