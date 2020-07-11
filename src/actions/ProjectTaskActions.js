@@ -8,7 +8,7 @@ import {
 
 export const addProjectTask = (project_task, history) => async dispatch => {
   try {
-    await axios.post("http://projet-tasks-spring.herokuapp.com/tasks/add", project_task);
+    await axios.post("https://projet-tasks-spring.herokuapp.com/tasks/add", project_task);
     history.push("/");
     dispatch({
       type: GET_ERRORS,
@@ -23,7 +23,7 @@ export const addProjectTask = (project_task, history) => async dispatch => {
 };
 
 export const getBackLog=()=> async dispatch =>{
-    const res= await axios.get("http://projet-tasks-spring.herokuapp.com/tasks/all");
+    const res= await axios.get("https://projet-tasks-spring.herokuapp.com/tasks/all");
     dispatch({
         type:GET_PROJECT_TASKS,
         payload:res.data
