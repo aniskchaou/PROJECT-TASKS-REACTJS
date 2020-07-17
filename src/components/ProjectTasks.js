@@ -28,8 +28,8 @@ class ProjectTasks extends Component {
                   </div>
                 );
               } else {
-                const tasks = project_tasks.map(project_task => (
-                  <ProjectTaskItem key={project_task.id} project_task={project_task} />
+                const tasks = project_tasks.map(project_task_p => (
+                  <ProjectTaskItem key={project_task_p.id} project_task={project_task_p} />
                 ));
         
                 for (let i = 0; i < tasks.length; i++) {

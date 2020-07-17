@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
-import { addProjectTask } from "../actions/ProjectTaskActions";
+import { addProjectTaskAction } from "../actions/ProjectTaskActions";
 
 
 class AddProjectTask extends Component {
@@ -28,7 +28,7 @@ class AddProjectTask extends Component {
       status: this.state.status
     };
      console.log(newProjectTask);
-    this.props.addProjectTask(newProjectTask, this.props.history);
+    this.props.addProjectTaskAction(newProjectTask, this.props.history);
   }
 
   render() {
@@ -90,7 +90,7 @@ class AddProjectTask extends Component {
 }
 
 AddProjectTask.propTypes = {
-  addProjectTask: PropTypes.func.isRequired,
+  addProjectTaskAction: PropTypes.func.isRequired,
   errors: PropTypes.object.isRequired
 };
 
@@ -100,5 +100,5 @@ const mapStateToProps = state => ({
 
 export default connect(
   mapStateToProps,
-  { addProjectTask }
+  { addProjectTaskAction }
 )(AddProjectTask);

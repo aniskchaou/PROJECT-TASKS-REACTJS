@@ -1,6 +1,12 @@
 import React, { Component } from 'react'
-
-export default class ProjectTaskItem extends Component {
+import PropTypes from "prop-types";
+import { connect } from "react-redux";
+import { Link } from 'react-router-dom';
+import {deleteProjectTask} from "../actions/ProjectTaskActions"
+ class ProjectTaskItem extends Component {
+  onDeleteClick(pt_id) {
+    this.props.deleteProjectTask(pt_id);
+  }
     render() {
         const { project_task } = this.props;
         return (
@@ -11,13 +17,16 @@ export default class ProjectTaskItem extends Component {
               <p className="card-text text-truncate ">
                 {project_task.acceptanceCriteria}
               </p>
-              <a href="" className="btn btn-primary">
-                View / Update
-              </a>
+              <Link
+            to={`updatetask/${project_task.id}`}
+            className="btn btn-primary"
+          >
+            View / Update
+          </Link>
     
               <button
                 className="btn btn-danger ml-4"
-
+                onClick={this.onDeleteClick.bind(this, project_task.id)}
               >
                 Delete
               </button>
@@ -26,3 +35,12 @@ export default class ProjectTaskItem extends Component {
         );
       }
 }
+
+ProjectTaskItem.propTypes = {
+  deleteProjectTask: PropTypes.func.isRequired
+};
+
+export default connect(
+  null,
+  { deleteProjectTask }
+)(ProjectTaskItem);

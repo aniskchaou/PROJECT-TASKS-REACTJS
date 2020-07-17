@@ -16,7 +16,7 @@ import {
           ...state,
           project_tasks: action.payload
         };
-  /*
+  
       case GET_PROJECT_TASK:
         return {
           ...state,
@@ -29,7 +29,7 @@ import {
           project_tasks: state.project_tasks.filter(
             project_task => project_task.id !== action.payload
           )
-        };*/
+        };
       default:
         return state;
     }
