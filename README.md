@@ -8,7 +8,8 @@ https://project-tasks-reactjs.herokuapp.com/
 
 ## Screenshot
 <p align="center"> 
-![enter image description here](project_tasks.JPG)
+
+![hjg](project_tasks.JPG)
 </p>
 
 ## Technologies
