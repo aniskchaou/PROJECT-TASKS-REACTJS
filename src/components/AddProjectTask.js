@@ -27,7 +27,7 @@ class AddProjectTask extends Component {
       acceptanceCriteria: this.state.acceptanceCriteria,
       status: this.state.status
     };
-     console.log(newProjectTask);
+    console.log(newProjectTask);
     this.props.addProjectTaskAction(newProjectTask, this.props.history);
   }
 

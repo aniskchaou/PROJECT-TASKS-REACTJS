@@ -27,6 +27,7 @@ export const addProjectTaskAction = (project_task, history) => async dispatch =>
   }
 };
 
+//delete task
 export const deleteProjectTask = pt_id => async dispatch => {
   if (
     window.confirm(
@@ -51,6 +52,7 @@ export const getBackLog=()=> async dispatch =>{
     });
 }
 
+//get task
 export const getProjectTask = (pt_id, history) => async dispatch => {
   try {
     const res = await axios.get(`https://projet-tasks-spring.herokuapp.com/tasks/${pt_id}`);
@@ -58,6 +60,7 @@ export const getProjectTask = (pt_id, history) => async dispatch => {
       type: GET_PROJECT_TASK,
       payload: res.data
     });
+
   } catch (error) {
     history.push("/");
   }

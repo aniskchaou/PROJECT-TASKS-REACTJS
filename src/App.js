@@ -12,15 +12,15 @@ import UpdateProjectTask from "./components/UpdateProjectTask"
 function App() {
   return (
     <Provider store={store}>
-    <Router>
-      <div className="App">
-        <NavBar />
-        <Route exact path="/" component={ProjectTasks} />
-        <Route exact path="/addtask" component={AddProjectTask} />
-        <Route exact path="/updatetask/:pt_id" component={UpdateProjectTask}
-            />
-      </div>
-    </Router>
+      <Router>
+        <div className="App">
+          <NavBar />
+          <Route exact path="/" component={ProjectTasks} />
+          <Route exact path="/addtask" component={AddProjectTask} />
+          <Route exact path="/updatetask/:pt_id" component={UpdateProjectTask}
+          />
+        </div>
+      </Router>
     </Provider>
   );
 }
